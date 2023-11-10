@@ -32,7 +32,6 @@ public class CombineTwoSortedArrays {
         }
         return  res;
     }
-
     public static void main(String[] args){
 
         int[] arr1 = {1, 3, 5, 7, 9};
@@ -41,9 +40,6 @@ public class CombineTwoSortedArrays {
       ArrayList<Integer> result = combineArray(arr1, arr2);
 
             System.out.print(result);
-
-
-
     }
 
 }
