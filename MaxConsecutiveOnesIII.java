@@ -4,29 +4,44 @@ public class MaxConsecutiveOnesIII {
         int left = 0;
         int zeroCount = 0;
         int maxOnes = 0;
-
         for (int right = 0; right < nums.length; right++) {
             if (nums[right] == 0) {
                 zeroCount++;
             }
-
             while (zeroCount > k) { //Key Area of concentration
                 if (nums[left] == 0) {//
                     zeroCount--;
                 }
                 left++;
             }
-/*
-We are only concerned with sliding of windown and the window start
-point and end point will give us our answer. Now the logic is
-depending on the constraint. Depending on logic window will move.
-For example line 13 to 17. Out constrains is number of zeros not to ex
-ceed 1 if it exceeds then then we have to interupt. Since its okay to
-have one 0 because we can flip it to one but if number of zeros are
-greater than 1 lets say two then we have to reduce our zero counter
-by one and slide our window to the right from left by incrementing
-left. if we kept doing this
- */
+/*Eplacaton of while loop: While loop gets invoked when zeroCounter is
+greater than 2 in our case when right reach at index 5 our zeroCounter
+would be at 3 which we dont want becasuse k=2 (utmost two means 2 or
+less zeros are only acceptable). Now we will get into Loop in loop we have
+if statement which is starting from Left=0 index. At this index
+we have one thus we cant reduce our zeroCounter, thus we will just
+increment left by one we will keep incrementing left untill we find
+a zero once we find zero in our array as we are moving towards right
+we will reduce our zeroCounter by one and increment of left pointer.
+This time our zeroCount will be equal to 2 and our k is also 2.
+This 2 cant be greater than true. Its false thats why we will get out
+of our while loop. At this point our left pointer is staring at index 4 and right
+pointer at index 6 and zeroCounter at 2.
+At this point the code will go back to right loop and at this time the
+right will check what is at index 6 which is one thus we will keep moving
+with right loop unless we get to last index where we found 0 again.
+This will increment our zeroCounter by one remember we had our zeroCounter
+which is standing at 2 which is not again incrementd to 3 which is greater than
+our k=2 thus;
+we will again get into our while loop which will check what we have at
+left index = 4 which is also zero thus again counter will be reduced by
+1 and left will be increated by one now left is standing at 5 index and
+Since now right loop is fully exusted thus now we would end up having the
+longest sunArray which has atmost 2 zeros.
+Thus the length of our longest subArray would be = right -left +1=10-5+1=6
+
+
+*/
             // Update the maximum consecutive ones
             maxOnes = Math.max(maxOnes, right - left + 1);
         }
