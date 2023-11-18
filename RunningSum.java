@@ -1,2 +1,8 @@
-package PACKAGE_NAME;public class RunningSum {
+public class RunningSum {
+
+
+    public static void main(String args){
+
+
+    }
 }
