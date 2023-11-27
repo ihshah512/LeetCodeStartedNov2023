@@ -22,3 +22,7 @@ HashMap is a basic implementation of the Map interface.
 Other implementations include LinkedHashMap, TreeMap, and others.
 LinkedHashMap: Maintains the order of key-value pairs as they are inserted.
 TreeMap: Sorts key-value pairs based on the natural ordering of keys or a custom comparator.
+
+-Convert set to Array:
+
+Integer[] numArray = numSet.toArray(new Integer[0]);
