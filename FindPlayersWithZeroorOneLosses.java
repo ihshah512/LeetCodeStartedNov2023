@@ -2,7 +2,6 @@ package Hashsing;
 import java.util.*;
 
 public class FindPlayersWithZeroorOneLosses {
-
     public static List<List<Integer>> findWinners(int[][] matches) {
         Set<Integer> allWinners = new TreeSet<>();
         Set<Integer> allLosers = new TreeSet<>();
@@ -26,36 +25,25 @@ public class FindPlayersWithZeroorOneLosses {
                 } else if (justOneLost.contains(currPlayer)) {
                     justOneLost.remove(Integer.valueOf(currPlayer));
                 }
-
             }
         }
-
         for (int l : allWinners) {
             if (!allLosers.contains(l)) {
                 neverLostAny.add(l);
             }
         }
-      //  List<Integer> allWinnersList = new ArrayList<>(allWinners);
-        //List<Integer> allLosersList = new ArrayList<>(allLosers);
         List<Integer> listNeverLost = new ArrayList<>(neverLostAny);
         List<Integer> listJustOne = new ArrayList<>(justOneLost);
 
-       // Collections.sort(neverLostAny);
-      //  Collections.sort(justOneLost);
+         List<List<Integer>> result = new ArrayList<>();
 
-        List<List<Integer>> result = new ArrayList<>();
-        //result.add(allWinnersList);
-       // result.add(allLosersList);
         result.add(listNeverLost);
         result.add(listJustOne);
-
         return result;
     }
-
     public static void main(String[] args) {
         int[][] matches = {{1,3},{2,3},{3,6},{5,6},{5,7},{4,5},{4,8},{4,9},{10,4},{10,9}};
         List<List<Integer>> result = findWinners(matches);
-
         System.out.println("All winners: " + result.get(0));
         System.out.println("All losers: " + result.get(1));
        // System.out.println("Players who never lost a match: " + result.get(2));
