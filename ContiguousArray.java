@@ -1,7 +1,7 @@
 package Hashsing;
 import java.util.*;
 public class ContiguousArray {
-    public static void findMaxLength(int[] nums) {
+    public static int findMaxLength(int[] nums) {
         int maxLen = 0;
     for(int i = 0; i < nums.length; i++) {
         int zeroLen = 0;
@@ -12,22 +12,21 @@ public class ContiguousArray {
             }else{
                 oneLen++;
             }
-            System.out.println("zeros-> " + zeroLen);
-            System.out.println("ones-> " + oneLen);
+           // System.out.println("zeros-> " + zeroLen);
+          //  System.out.println("ones-> " + oneLen);
             if(zeroLen == oneLen){
                 maxLen = Math.max(maxLen, j-i+1);
-                System.out.println("MaxLen -> " + maxLen);
-                System.out.println("j-i+1 -> " + j + " - " + i + " = " + (j-i+1));
-                System.out.println("j-i+1 -> " + (j-i+1));
+            //    System.out.println("MaxLen -> " + maxLen);
+            //    System.out.println("j-i+1 -> " + j + " - " + i + " = " + (j-i+1));
+            //    System.out.println("j-i+1 -> " + (j-i+1));
             }
-
         }
     }
-       // return maxLen;
+        return maxLen;
     }
     public static void main(String[] args){
 
         int[] num = {0,1,0,1};
-        findMaxLength(num);
+        System.out.print(findMaxLength(num));
     }
 }
