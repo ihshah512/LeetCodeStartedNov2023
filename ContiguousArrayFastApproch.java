@@ -1,8 +1,6 @@
 package Hashsing;
 import java.util.*;
 public class ContiguousArrayFastApproch {
-
-
     public static int findMaxLength(int[] nums){
 
         for(int i = 0; i < nums.length; i++){
@@ -22,16 +20,9 @@ public class ContiguousArrayFastApproch {
         }else{
             sumMap.put(currSum,j);
         }
-
-
         }
-
-
     return maxLen;
-
     }
-
-
     public static void main(String[] args){
 
         int[] arr = {0,1,0,1};
@@ -44,3 +35,9 @@ public class ContiguousArrayFastApproch {
 
 
 }
+/*
+Given a binary array nums, return the
+maximum length of a contiguous subarray with an equal number of 0 and 1.
+
+
+ */
