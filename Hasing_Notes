@@ -1,14 +1,18 @@
 
-mplementation:
+implementation:
 SET
 Set:
 Uniqueness:
 
-Does not allow duplicates: A Set does not allow duplicate elements. If you attempt to add an element that is already present, the Set will ignore the duplicate.
+Does not allow duplicates: A Set does not allow duplicate elements.
+If you attempt to add an element that is already present,
+the Set will ignore the duplicate.
 Implementation:
 
-Various implementations are available, such as HashSet, LinkedHashSet, and TreeSet.
-HashSet: Provides constant-time performance for basic operations but makes no guarantees about the order of elements.
+Various implementations are available, such as HashSet,
+LinkedHashSet, and TreeSet.
+HashSet: Provides constant-time performance for basic operations
+but makes no guarantees about the order of elements.
 LinkedHashSet: Maintains the order of elements as they are inserted.
 TreeSet: Maintains elements in a sorted order.
 MAP:
